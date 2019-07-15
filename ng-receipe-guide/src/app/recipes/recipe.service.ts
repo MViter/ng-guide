@@ -8,6 +8,7 @@ export class RecipeService {
     recipeSelected = new EventEmitter<Recipe>();
     private recipes: Recipe[] = [
         new Recipe(
+            0,
             'Tasty Schnitzel',
             'A super-tasty schnitzel - just awsome!',
             'https://en.wikipedia.org/wiki/Schnitzel#/media/File:Breitenlesau_Krug_Br%C3%A4u_Schnitzel.JPG',
@@ -16,6 +17,7 @@ export class RecipeService {
                 new Ingredient('French Fries', 20)
             ]),
         new Recipe(
+            1,
             'Big Fat Burger',
             'What else you need to say?',
             'https://commons.wikimedia.org/wiki/File:Lounge_Burger_Wiki.jpg',
@@ -29,6 +31,10 @@ export class RecipeService {
 
     getRecipes() {
         return this.recipes.slice();
+    }
+
+    getRecipe (index: number) {
+        return this.recipes.slice()[index]; // slice() - gives a copy of the array, thought it won`t be a deep copy, so an object still are the same anyways, so slice() doesn`t matter:)
     }
 
     addIngredientsToShoppingList(ingredients: Ingredient[]) {

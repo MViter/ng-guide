@@ -1,9 +1,9 @@
 import { Directive, HostListener, HostBinding } from '@angular/core';
 
 @Directive({
-    selector: '[appDropdown]'
+    selector: '[appHeaderDropdown]'
 })
-export class DropdownDirective {
+export class HeaderDropdownDirective {
     // @HostBinding('class.open') isOpen = false;
     @HostBinding('class.show') isShow = false;
 
@@ -11,8 +11,8 @@ export class DropdownDirective {
         // this.isOpen = !this.isOpen;
         this.isShow = !this.isShow;
         this.isShow
-        ? document.getElementsByClassName('dropdown-menu')[1].classList.add('show')
-        : document.getElementsByClassName('dropdown-menu')[1].classList.remove('show');
+            ? document.getElementsByClassName('navbar-dropdown')[0].classList.add('show')
+            : document.getElementsByClassName('navbar-dropdown')[0].classList.remove('show');
     }
 
     // @HostListener('blur') handleBlur() {

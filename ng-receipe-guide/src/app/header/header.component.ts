@@ -7,15 +7,15 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @Output() featureSelected = new EventEmitter<string>();
+  // @Output() featureSelected = new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSelect (feature: string) {
-    this.featureSelected.emit(feature);
-  }
+  // onSelect (feature: string) {
+  //   this.featureSelected.emit(feature);
+  // }
 
 }
