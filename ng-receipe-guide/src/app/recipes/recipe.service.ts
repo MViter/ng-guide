@@ -14,7 +14,7 @@ export class RecipeService {
             0,
             'Tasty Schnitzel',
             'A super-tasty schnitzel - just awsome!',
-            'https://en.wikipedia.org/wiki/Schnitzel#/media/File:Breitenlesau_Krug_Br%C3%A4u_Schnitzel.JPG',
+            'https://upload.wikimedia.org/wikipedia/commons/2/22/Breitenlesau_Krug_Br%C3%A4u_Schnitzel.JPG',
             [
                 new Ingredient('Meat', 1),
                 new Ingredient('French Fries', 20)
@@ -23,7 +23,7 @@ export class RecipeService {
             1,
             'Big Fat Burger',
             'What else you need to say?',
-            'https://commons.wikimedia.org/wiki/File:Lounge_Burger_Wiki.jpg',
+            'https://upload.wikimedia.org/wikipedia/commons/d/dc/Lounge_Burger_Wiki.jpg',
             [
                 new Ingredient('Buns', 2),
                 new Ingredient('Meat', 1)
@@ -46,11 +46,13 @@ export class RecipeService {
 
     addRecipe (recipe: Recipe) {
         this.recipes.push(recipe);
+        this.slService.addIngredients(recipe.ingredients);
         this.recipesChanged.next(this.recipes.slice());
     }
 
     updateRecipe (index: number, newRecipe: Recipe) {
         this.recipes[index] = newRecipe;
+        this.slService.addIngredients(newRecipe.ingredients);
         this.recipesChanged.next(this.recipes.slice());
     }
 

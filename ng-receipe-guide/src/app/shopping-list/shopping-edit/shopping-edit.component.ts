@@ -54,7 +54,7 @@ export class ShoppingEditComponent implements OnInit, OnChanges {
       this.slService.addIngredient(newIngredient);
     }
     this.editMode = false;
-    form.reset();
+    this.onClear();
   }
 
   onClear() {
