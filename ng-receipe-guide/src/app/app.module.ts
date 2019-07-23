@@ -19,6 +19,9 @@ import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModules } from './material-components'; 
 import { RecipeService } from './recipes/recipe.service';
+import { HttpClientModule } from '@angular/common/http';
+import { DataStorageService } from './shared/data-storage.service';
+// import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -41,10 +44,11 @@ import { RecipeService } from './recipes/recipe.service';
     FormsModule,
     BrowserAnimationsModule,
     MaterialModules,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [FormsModule],
-  providers: [ShoppingListService, RecipeService],
+  providers: [ShoppingListService, RecipeService, DataStorageService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
