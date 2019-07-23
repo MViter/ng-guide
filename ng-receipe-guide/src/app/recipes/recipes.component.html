@@ -1,17 +1,15 @@
-<div class="row">
-    <div class="col-md-5">
-        <app-recipe-list></app-recipe-list>
-    </div>
-    <div class="col-md-7">
-        <!-- <app-recipe-detail
-            *ngIf="selectedRecipe; else infoText"
-            [recipe]="selectedRecipe">
-        </app-recipe-detail>
-        <ng-template #infoText>
-            <p>Please select a recipe!</p>
-        </ng-template> -->
-        <router-outlet></router-outlet>
-    </div>
-</div>
-
-<!-- (recipeWasSelected)="selectedRecipe = $event" -->
+<mat-card>
+    <mat-grid-list cols="1">
+        <mat-toolbar>
+            Recipes
+        </mat-toolbar>
+    </mat-grid-list>
+    <mat-grid-list cols="2" rowHeight="1:1.8">
+        <mat-grid-tile class="my-grid-tile" id="recipe-list">
+            <app-recipe-list></app-recipe-list>
+        </mat-grid-tile>
+        <mat-grid-tile> 
+            <router-outlet></router-outlet>
+        </mat-grid-tile>
+    </mat-grid-list>
+</mat-card>
