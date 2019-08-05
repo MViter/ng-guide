@@ -5,24 +5,23 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
+// import { HeaderComponent } from './core/header/header.component';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
-import { RecipeService } from './recipes/recipe.service';
+// import { ShoppingListService } from './shopping-list/shopping-list.service';
+// import { RecipeService } from './recipes/recipe.service';
 // import { RecipesModule } from './recipes/recipes.module';
-import { DataStorageService } from './shared/data-storage.service';
-import { AuthService } from './auth/auth.service';
-import { AuthGuard } from './auth/auth-guard.service'; 
+// import { DataStorageService } from './shared/data-storage.service';
+// import { AuthService } from './auth/auth.service';
+// import { AuthGuard } from './auth/auth-guard.service'; 
 import { AuthModule } from './auth/auth.module';
 import { MaterialModules } from './material-components'; 
-import { SharedModule } from './shared/shared.module';
-import { HomeComponent } from './home/home.component';
+import { CoreModule } from './core/core.module';
+// import { SharedModule } from './shared/shared.module';
+// import { HomeComponent } from './core/home/home.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    HeaderComponent,
-    HomeComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -33,9 +32,10 @@ import { HomeComponent } from './home/home.component';
     // RecipesModule,
     ShoppingListModule,
     AuthModule,
-    SharedModule
+    CoreModule
+    // SharedModule
   ],
-  providers: [ShoppingListService, RecipeService, DataStorageService, AuthService, AuthGuard ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
